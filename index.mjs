@@ -2,9 +2,10 @@
 import { promisify } from "util";
 import cp from "child_process";
 import path from "path";
-import fs, { existsSync, mkdirSync } from "fs";
+import { existsSync, mkdirSync } from "fs";
 import ora from 'ora';
 import fs from 'fs-extra'
+import { fileURLToPath } from "url";
 
 // convert libs to promises
 const exec = promisify(cp.exec);
@@ -20,7 +21,9 @@ if (process.argv.length < 3) {
 const projectName = process.argv[2];
 const currentPath = process.cwd();
 const projectPath = path.join(currentPath, projectName).replace("\\\\", "\\");
-const git_repo = "https://github.com/AviadCohen24/create-react-electron-app";
+
+const __fileName = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__fileName);
 
 // create project directory
 if (fs.existsSync(projectPath)) {
