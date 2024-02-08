@@ -37,15 +37,8 @@ else {
 try {
   const copySpinner = ora("Copying files...").start();
   // copy the local directory to the project folder -> creates the new boilerplate
-  await fs.copy(path.join(__dirname, 'external/electron-react-boilerplate'), projectPath);
+  await fs.copy(path.join(__dirname, 'External/Electron-ReactTS-Boilerplate'), projectPath);
   copySpinner.succeed();
-
-  const cleanSpinner = ora("Removing useless files").start();
-  // remove my git history
-  const rmGit = rm(path.join(projectPath, ".git"), { recursive: true, force: true });
-  // remove the installation file
-  const rmBin = rm(path.join(projectPath, "bin"), { recursive: true, force: true });
-  await Promise.all([rmGit, rmBin]);
 
   process.chdir(projectPath);
   // remove the packages needed for cli
