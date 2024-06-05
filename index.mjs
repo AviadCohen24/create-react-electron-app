@@ -41,11 +41,9 @@ try {
   copySpinner.succeed();
 
   process.chdir(projectPath);
+  const npmSpinner = ora("Installing dependencies...").start();
   // remove the packages needed for cli
   await exec("npm uninstall ora cli-spinners");
-  cleanSpinner.succeed();
-
-  const npmSpinner = ora("Installing dependencies...").start();
   await exec("npm install");
   npmSpinner.succeed();
 
@@ -56,6 +54,6 @@ try {
 
 } catch (error) {
   // clean up in case of error, so the user does not have to do it manually
-  fs.rmSync(projectPath, { recursive: true, force: true });
   console.log(error);
+  fs.rmSync(projectPath, { recursive: true, force: true });
 }
