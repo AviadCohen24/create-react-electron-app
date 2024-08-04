@@ -2,8 +2,6 @@
 
 A CLI tool to create an Electron app with a React template
 
-+ The package is still under development but is available for  use. Don't worry it's going to bo amazing !
-
 ## Quick Start
 
 You can use `npx` to directly create a new React Electron app using this package:
@@ -13,6 +11,7 @@ npx create-react-electron-app my-electron-app
 cd my-electron-app
 npm start
 ```
+The generated project includes a "Guess the Number" game template to help you get started easily.
 
 ## Features
 

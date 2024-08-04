@@ -1,6 +1,6 @@
 {
   "name": "create-react-electron-app",
-  "version": "2.0.3",
+  "version": "2.1.0",
   "description": "A CLI tool to create an Electron app with a React template",
   "keywords": [
     "electron",
@@ -23,5 +23,9 @@
   "dependencies": {
     "fs-extra": "^11.1.1",
     "ora": "^7.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AviadCohen24/Electron-ReactTS-Boilerplate"
   }
 }
